@@ -1,26 +1,25 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
-function NavBar() {
+const NavBar = () => {
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "1rem",
-        background: "yellow",
-      }}
-    >
-      <div>
-        <strong>Gordo Random</strong>
-      </div>
-      <div>
-        <a href="">Inicio</a> | <a href="#">Comidas</a> |{" "}
-        <a href="#">Eventos</a> | <a href="#">Contacto</a>
-      </div>
-      <CartWidget />
+    <nav>
+      <h1>Gordo Random</h1>
+      <ul>
+        <li>
+          <Link to="/">Todos</Link>
+        </li>
+        <li>
+          <Link to="/categoria/entrada">Entrada</Link>
+        </li>
+        <li>
+          <Link to="/categoria/platoprincipal">Plato principal</Link>
+        </li>
+        <li>
+          <Link to="/categoria/postre">Postre</Link>
+        </li>
+      </ul>
     </nav>
   );
-}
+};
 
 export default NavBar;
